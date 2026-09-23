@@ -22,6 +22,15 @@ jobs:
           python-version: "3.13"
           environment-file: environment.yml
           activate-environment: quantecon
+      - name: Install JAX (CPU, pinned)
+        shell: bash -l {0}
+        run: |
+          # Pinned: jax 0.11.1 (2026-08-17) hangs numpy_vs_numba_vs_jax's
+          # lax.fori_loop cells on the CPU path -- context is recorded in
+          # QuantEcon/workspace-lectures#49. With jax already present, the
+          # lecture's unpinned `!pip install quantecon jax` cell is satisfied
+          # and does not upgrade.
+          pip install "jax==0.11.0"
       - name: Display Conda Environment Versions
         shell: bash -l {0}
         run: conda list
@@ -29,7 +38,7 @@ jobs:
         shell: bash -l {0}
         run: pip list
       - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v21
+        uses: dawidd6/action-download-artifact@v24
         with:
           workflow: cache.yml
           branch: main
@@ -50,11 +59,11 @@ jobs:
           name: execution-reports
           path: _build/html/reports
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
       - name: Preview Deploy to Netlify
-        uses: quantecon/actions/preview-netlify@v0.8.0
+        uses: quantecon/actions/preview-netlify@v0.11.1
         with:
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
