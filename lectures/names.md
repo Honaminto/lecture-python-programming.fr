@@ -58,7 +58,7 @@ Nous savons désormais que lorsque cette instruction est exécutée, Python cré
 * la valeur `42`
 * certains attributs associés
 
-Mais qu'est-ce que `x` lui-même ?
+Mais qu'est-ce que `x` lui-même ?
 
 En Python, `x` est appelé un **nom**, et l'instruction `x = 42` **lie** le nom `x` à l'objet entier dont nous venons de parler.
 
@@ -82,7 +82,7 @@ Lors de la première étape, un objet fonction est créé, et le nom `f` lui est
 
 Après avoir lié le nom `g` au même objet, nous pouvons l'utiliser partout où nous utiliserions `f`.
 
-Que se passe-t-il lorsque le nombre de noms liés à un objet tombe à zéro ?
+Que se passe-t-il lorsque le nombre de noms liés à un objet tombe à zéro ?
 
 Voici un exemple de cette situation, où le nom `x` est d'abord lié à un objet puis **relié** à un autre
 
@@ -225,7 +225,7 @@ math.__name__
 
 En Python, **tout** code exécuté par l'interpréteur s'exécute dans un module.
 
-Qu'en est-il des commandes tapées à l'invite ?
+Qu'en est-il des commandes tapées à l'invite ?
 
 Elles sont également considérées comme étant exécutées au sein d'un module — dans ce cas, un module appelé `__main__`.
 
@@ -305,7 +305,7 @@ Dans ce cas, il s'agit de `__main__`, donc l'espace de nommage de `__main__` red
 ```{index} single: Python; Namespace (Local)
 ```
 
-Fait important : lorsque nous appelons une fonction, l'interpréteur crée un *espace de nommage local* pour cette fonction, et y enregistre les variables.
+Fait important : lorsque nous appelons une fonction, l'interpréteur crée un *espace de nommage local* pour cette fonction, et y enregistre les variables.
 
 La raison de ceci sera expliquée dans un instant.
 
@@ -339,7 +339,7 @@ Vous pouvez voir l'espace de nommage local de `f` avant qu'il ne soit détruit.
 
 Nous avons utilisé diverses fonctions natives, telles que `max(), dir(), str(), list(), len(), range(), type()`, etc.
 
-Comment fonctionne l'accès à ces noms ?
+Comment fonctionne l'accès à ces noms ?
 
 * Ces définitions sont fournies par le module `builtins`.
 * Elles disposent de leur propre espace de nommage appelé `__builtins__`.
@@ -414,7 +414,7 @@ def f():
 
 Ici, `f` est la *fonction englobante* de `g`, et chaque fonction dispose de ses propres espaces de nommage.
 
-Maintenant, nous pouvons énoncer la règle qui régit la résolution des espaces de nommage :
+Maintenant, nous pouvons énoncer la règle qui régit la résolution des espaces de nommage :
 
 L'ordre dans lequel l'interpréteur recherche les noms est
 
@@ -447,7 +447,7 @@ y = g(10)
 print("a = ", a, "y = ", y)
 ```
 
-Que se passe-t-il lorsque nous exécutons ce script ?
+Que se passe-t-il lorsque nous exécutons ce script ?
 
 ```{code-cell} ipython
 %run test.py
@@ -501,7 +501,7 @@ x = 1
 print(f(x), x)
 ```
 
-Nous comprenons maintenant ce qui va se passer ici : le code affiche `2` comme valeur de `f(x)` et `1` comme valeur de `x`.
+Nous comprenons maintenant ce qui va se passer ici : le code affiche `2` comme valeur de `f(x)` et `1` comme valeur de `x`.
 
 Tout d'abord, `f` et `x` sont enregistrés dans l'espace de nommage global.
 
