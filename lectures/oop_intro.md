@@ -211,7 +211,7 @@ Nous voyons dans cet exemple que les objets possèdent des attributs contenant d
 
 Ils possèdent également des attributs qui agissent comme des fonctions, appelés *méthodes*.
 
-Ces attributs sont importants ; examinons-les plus en détail.
+Ces attributs sont importants ; examinons-les plus en détail.
 
 (methods)=
 ### Méthodes
@@ -334,7 +334,7 @@ Autrement dit, le code suivant est équivalent :
 ```{code-cell} python3
 x = ['a', 'b']
 len(x)
-``` 
+```
 et
 
 ```{code-cell} python3
@@ -352,7 +352,7 @@ Le message de ce cours est clair :
 Cela inclut non seulement les listes, les chaînes de caractères, etc., mais aussi des choses moins évidentes, telles que
 
 * les fonctions (une fois qu'elles ont été chargées en mémoire)
-les modules (de même)
+* les modules (de même)
 * les fichiers ouverts en lecture ou en écriture
 * les entiers, etc.
 
